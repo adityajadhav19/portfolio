@@ -84,12 +84,10 @@ export default function AboutPage() {
         <div className="shrink-0">
           <div className="w-[140px] sm:w-[160px] border border-line rounded-md p-2 bg-inksoft">
             <img
-              src="/aditya.jpg"
+              src="/aditya.jpeg"
               alt="Aditya Jadhav"
               className="w-full aspect-[4/5] object-cover rounded"
-              style={{
-                filter: 'grayscale(0.4) contrast(1.05) sepia(0.15)',
-              }}
+              
             />
           </div>
           <div className="font-mono text-[10px] text-slatedark mt-2 text-center">
