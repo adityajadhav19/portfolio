@@ -33,13 +33,18 @@ export default function ChapterNav() {
                 const active = pathname === c.href;
                 return (
                   <li key={c.href} className="relative pl-7">
+                    {/* Timeline node */}
                     <span
-                      className={`absolute left-0 top-1.5 w-[15px] h-[15px] rounded-full border transition-colors duration-300 ${active
-                          ? 'bg-amber border-amber trail-pulse'
-                          : 'bg-ink border-slatedark'
+                      className={`absolute left--0.5 top-1.5 w-[15px] h-[15px] rounded-full border transition-colors duration-300 ${active
+                        ? 'bg-amber border-amber'
+                        : 'bg-ink border-slatedark'
                         }`}
-                      aria-hidden
                     />
+
+                    {/* Active bar */}
+                    {active && (
+                      <span className="absolute left-5 top-0 h-11 w-[3px] rounded-full bg-amber animate-pulse" />
+                    )}
                     <Link href={c.href} className="group block">
                       <div className="flex items-baseline gap-2">
                         <span className="font-mono text-[11px] text-slatedark">{c.n}</span>
@@ -57,6 +62,13 @@ export default function ChapterNav() {
               })}
             </ul>
           </div>
+          <a
+            href="/resume.pdf"
+            download
+            className="mt-10 inline-flex items-center gap-2 font-mono text-[11px] text-amber border border-amber/40 rounded-full px-4 py-2.5 hover:bg-amber/10 transition-colors w-fit"
+          >
+            ↓ Download résumé
+          </a>
         </div>
 
         <div className="font-mono text-[11px] text-slatedark leading-relaxed">
@@ -83,8 +95,8 @@ export default function ChapterNav() {
                   key={c.href}
                   href={c.href}
                   className={`flex items-center gap-2 whitespace-nowrap font-mono text-xs pb-1 border-b-2 transition-colors ${active
-                      ? 'text-amber border-amber'
-                      : 'text-slate border-transparent'
+                    ? 'text-amber border-amber'
+                    : 'text-slate border-transparent'
                     }`}
                 >
                   <span>{c.n}</span>

@@ -106,15 +106,6 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <p className="text-paperdim text-[15.5px] leading-relaxed mt-7 max-w-[64ch]">
-        I&rsquo;m a backend and full-stack engineer who ended up specializing in
-        AI-integrated systems mostly by chasing the hardest part of every project. I&rsquo;m
-        comfortable across Next.js/React frontends, FastAPI/Node.js backends, four
-        different SQL dialects, and AWS infrastructure — but the thing I actually
-        enjoy is system design: multi-tenant architecture, offline-first deployment,
-        real-time systems, and the security engineering that has to hold all of it
-        together.
-      </p>
 
       <section className="mt-20 pt-14 border-t border-line">
         <div className="eyebrow">TOOLKIT</div>

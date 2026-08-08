@@ -39,13 +39,22 @@ export default function Home() {
               a schema-aware LLM pipeline across five database engines, a real-time proctoring
               platform, and a solo-built AI interview copilot. This is the log of how.
             </p>
-            <Link
-              href="/work"
-              className="mt-14 inline-flex items-center gap-2.5 font-mono text-[13px] text-slate hover:text-amber transition-colors w-fit"
-            >
-              There&rsquo;s more below — start with the work
-              <span className="inline-block animate-bounce">↓</span>
-            </Link>
+           <div className="mt-14 flex flex-wrap items-center gap-6">
+          <Link
+            href="/work"
+            className="inline-flex items-center gap-2.5 font-mono text-[13px] text-slate hover:text-amber transition-colors w-fit"
+          >
+            There&rsquo;s more below — start with the work
+            <span className="inline-block animate-bounce">↓</span>
+          </Link>
+          <a
+            href="/resume.pdf"
+            download
+            className="font-mono text-[13px] text-amber border border-amber/40 rounded-full px-4 py-2 hover:bg-amber/10 transition-colors"
+          >
+            ↓ Résumé (PDF)
+          </a>
+        </div>
           </section>
           <section className="py-20 border-t border-line">
             <div className="eyebrow">CURRENTLY</div>

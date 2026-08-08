@@ -1,6 +1,6 @@
 import ProjectCard, { Project } from '@/components/ProjectCard';
+import CompactProjectList, { CompactProject } from '@/components/CompactProjectList';
 import NextChapter from '@/components/NextChapter';
-import Reveal from '@/components/Reveal';
 
 const projects: Project[] = [
   {
@@ -26,18 +26,7 @@ const projects: Project[] = [
     outcome: 'Fully functional offline/LAN deployment with independently scalable real-time proctoring, used across the full exam lifecycle from scheduling to grading.',
   },
   {
-    tag: '03 — Solo / AI Voice',
-    title: 'Parakeet — AI Interview Copilot',
-    stack: ['OpenAI GPT-4o', 'Deepgram', 'Voice Transcription'],
-    summary:
-      'A solo-built interview-preparation copilot that listens in real time and surfaces live answer suggestions — owned end-to-end from concept through deployment.',
-    note: 'Latency was the whole game here. A suggestion that arrives half a second late is worse than no suggestion at all — that constraint shaped every architectural decision more than the AI logic did.',
-    problem: 'Interview prep tools were either static question banks or too slow to feel like a real-time aid during an actual conversation.',
-    approach: 'Combined Deepgram for low-latency voice transcription with GPT-4o for contextual answer generation, tuned for a live-conversation feedback loop rather than a batch Q&A pattern.',
-    outcome: 'Fully deployed solo project, end-to-end from architecture to production.',
-  },
-  {
-    tag: '04 — Personal / E-commerce',
+    tag: '03 — Personal / E-commerce',
     title: 'Active Products — Ayurvedic E-Commerce',
     stack: ['Next.js (App Router)', 'Prisma', 'PostgreSQL (Neon)', 'Razorpay', 'Upstash Redis'],
     summary:
@@ -47,104 +36,58 @@ const projects: Project[] = [
     approach: 'Razorpay integration with signature-verified webhooks, Upstash Redis rate-limiting and CORS on all API routes, transactional email via Resend, Cloudinary for images, and a legal framework aligned with DPDP Act 2023, the Consumer Protection Act 2019, and FSSAI regulations.',
     outcome: 'Live on a custom domain with dark mode support via Tailwind v4 class-based theming; ongoing, real orders flowing through it.',
   },
-  {
-    tag: '05 — Applied ML',
-    title: 'Diet Recommendation API',
-    stack: ['FastAPI', 'Docker', 'scikit-learn', 'OpenAI'],
-    summary:
-      'A containerized backend that pairs a scikit-learn prediction model with GPT-driven personalization to turn raw nutrition data into meal suggestions that actually read like advice.',
-    note: 'The interesting part wasn\u2019t the ML model — it was designing the handoff so GPT could rewrite scikit-learn\u2019s numeric output into something a person would actually want to read, without hallucinating the underlying numbers.',
-    problem: 'Raw model output (macros, scores) needed to become something a non-technical user could actually act on.',
-    approach: 'scikit-learn handles the prediction; GPT-4o handles the language layer strictly downstream of the model\u2019s numbers, wrapped in a Dockerized FastAPI service with production-grade error handling.',
-    outcome: 'Fully containerized and deployable, with a clean separation between "the model decides" and "the model explains."',
-  },
-  {
-    tag: '06 — Infrastructure',
-    title: 'BI Copilot CI/CD Pipeline',
-    stack: ['GitHub Actions', 'EC2', 'Docker Compose', 'Bash'],
-    summary:
-      'A production deployment pipeline built independently on top of the BI Copilot — bastion-proxied, backup-safe, and boring in exactly the ways infrastructure should be.',
-    note: 'Chased a bind-mount bug for the better part of a day before realizing it was an environment-variable separation issue, not a Docker issue at all. Wrote the whole thing up afterward so I\u2019d never lose that afternoon again.',
-    problem: 'Deployments to production EC2 instances were manual, unversioned, and risky around migrations.',
-    approach: 'GitHub Actions with bastion proxy support, a custom deploy.sh implementing a git fetch/reset strategy, pre-migration pg_dump backups, and selective Docker Compose service restarts to avoid full-stack downtime.',
-    outcome: 'Repeatable, backup-safe deployments; resolved bind-mount, Prisma auth, and SSH key parsing issues along the way, documented for the next person.',
-  },
-  {
-  tag: '07 — AI Agents / Architecture',
-  title: 'Multi-Agent Development Platform',
-  stack: ['OpenAI', 'FastAPI', 'Next.js', 'RBAC', 'Tool Calling'],
-  summary:
-    'An agent orchestration platform designed to replace repetitive development workflows with specialized AI agents coordinated through a central orchestrator.',
-  note:
-    'The challenge was never building individual agents—it was designing clear boundaries between them so each could own a responsibility without creating unnecessary token usage or tight coupling.',
-  problem:
-    'General-purpose assistants become inefficient for large engineering tasks that require planning, implementation, validation, and deployment across multiple steps.',
-  approach:
-    'Designed a modular orchestrator coordinating specialized agents for planning, backend development, frontend generation, testing, deployment, documentation, and code review through structured tool-based communication.',
-  outcome:
-    'Created a scalable architecture that can automate significant portions of the software development lifecycle while remaining extensible for new tools and agents.',
-},
-{
-  tag: '08 — Computer Vision / Robotics',
-  title: 'ORB-SLAM3 Autonomous Navigation',
-  stack: ['ROS', 'ORB-SLAM3', 'Jetson Orin Nano', 'OAK-D', 'C++'],
-  summary:
-    'Integrated stereo visual SLAM on NVIDIA Jetson hardware to provide real-time localization and mapping for robotic navigation.',
-  note:
-    'Most debugging time was spent on synchronization, calibration, and ROS integration rather than the SLAM algorithm itself.',
-  problem:
-    'Robots require accurate localization in environments where GPS is unavailable.',
-  approach:
-    'Configured ORB-SLAM3 with stereo cameras and IMU data, optimized ROS nodes, and deployed the full pipeline on Jetson Orin Nano for embedded execution.',
-  outcome:
-    'Achieved stable real-time visual localization suitable for autonomous robotics experiments.',
-},
-{
-  tag: '09 — API Development',
-  title: 'Django Ninja Task Management API',
-  stack: ['Django', 'Django Ninja', 'SQLite', 'React'],
-  summary:
-    'A lightweight REST API demonstrating schema-first backend development with automatic validation and documentation.',
-  note:
-    'Using Django Ninja significantly reduced boilerplate while keeping type safety and API documentation synchronized.',
-  problem:
-    'Traditional Django REST implementations often require repetitive serializers and validation logic.',
-  approach:
-    'Built CRUD endpoints using Django Ninja schemas with authentication, validation, and React frontend integration.',
-  outcome:
-    'Delivered a clean, maintainable API architecture suitable as a foundation for larger backend services.',
-},
-{
-  tag: '10 — GIS / Public Safety',
-  title: 'SafeLink Neighborhood Safety Network',
-  stack: ['SvelteKit', 'TypeScript', 'MapLibre GL', 'WebGL'],
-  summary:
-    'A location-aware public safety platform that visualizes incidents and emergency resources on an interactive GIS map.',
-  note:
-    'Rendering large map datasets smoothly required treating the browser as a graphics engine rather than simply a webpage.',
-  problem:
-    'Communities lacked an intuitive way to visualize neighborhood safety information geographically.',
-  approach:
-    'Built a WebGL-powered interactive mapping interface with MapLibre, layered incident visualization, and responsive UI components.',
-  outcome:
-    'Delivered a performant GIS application capable of visualizing large spatial datasets interactively.',
-},
-{
-  tag: '11 — IoT / Embedded Systems',
-  title: 'Autonomous Floor Cleaning Robot',
-  stack: ['ESP8266', 'NodeMCU', 'Blynk', 'L293D', 'Embedded C'],
-  summary:
-    'An IoT-enabled floor cleaning robot with wireless control and autonomous movement capabilities.',
-  note:
-    'Working with constrained embedded hardware taught the importance of reliability over feature count.',
-  problem:
-    'Low-cost home automation projects often require balancing hardware limitations with practical functionality.',
-  approach:
-    'Designed the robot around ESP8266 with motor control through L293D, integrating wireless control using the Blynk platform.',
-  outcome:
-    'Delivered a functional embedded robotics prototype demonstrating remote operation and autonomous cleaning.',
-},
+];
 
+const moreProjects: CompactProject[] = [
+  {
+    tag: '04 — AI Agents',
+    title: 'Multi-Agent Development Platform',
+    stack: ['OpenAI', 'FastAPI', 'Next.js', 'Tool Calling'],
+    oneLiner:
+      'An orchestrator coordinating specialized agents — planning, backend, frontend, testing, deployment — through structured tool-based communication.',
+  },
+  {
+    tag: '05 — Solo / AI Voice',
+    title: 'Parakeet — AI Interview Copilot',
+    stack: ['OpenAI GPT-4o', 'Deepgram'],
+    oneLiner: 'Real-time voice transcription with live answer suggestions during an actual conversation, not batch Q&A.',
+  },
+  {
+    tag: '06 — Robotics / CV',
+    title: 'ORB-SLAM3 Autonomous Navigation',
+    stack: ['ROS', 'ORB-SLAM3', 'Jetson Orin Nano', 'C++'],
+    oneLiner: 'Stereo visual SLAM on embedded hardware for real-time localization where GPS isn\u2019t available.',
+  },
+  {
+    tag: '07 — Infrastructure',
+    title: 'BI Copilot CI/CD Pipeline',
+    stack: ['GitHub Actions', 'EC2', 'Docker Compose'],
+    oneLiner: 'Bastion-proxied deployment pipeline with pre-migration backups and selective service restarts.',
+  },
+  {
+    tag: '08 — GIS',
+    title: 'SafeLink Neighborhood Safety Network',
+    stack: ['SvelteKit', 'MapLibre GL', 'WebGL'],
+    oneLiner: 'Interactive GIS platform visualizing safety incidents and emergency resources geographically.',
+  },
+  {
+    tag: '09 — Applied ML',
+    title: 'Diet Recommendation API',
+    stack: ['FastAPI', 'scikit-learn', 'OpenAI'],
+    oneLiner: 'Containerized backend pairing model predictions with GPT-driven, readable meal personalization.',
+  },
+  {
+    tag: '10 — API Development',
+    title: 'Django Ninja Task Management API',
+    stack: ['Django Ninja', 'SQLite', 'React'],
+    oneLiner: 'Schema-first REST API — type-safe, auto-documented, minimal boilerplate.',
+  },
+  {
+    tag: '11 — IoT',
+    title: 'Autonomous Floor Cleaning Robot',
+    stack: ['ESP8266', 'Blynk', 'Embedded C'],
+    oneLiner: 'Wirelessly controlled cleaning robot built around hardware constraints, prioritizing reliability over features.',
+  },
 ];
 
 export default function WorkPage() {
@@ -153,19 +96,25 @@ export default function WorkPage() {
       <div className="eyebrow">SPECIMENS</div>
       <h1 className="font-display text-[32px] md:text-[46px] mt-5">11 systems, shipped</h1>
       <p className="text-slate max-w-[56ch] mt-5 text-[15px] leading-relaxed">
-        Three production systems built as EduDiagno&rsquo;s team lead, and 8 personal
-        projects built because a real constraint was more interesting than a tutorial.
-        Each has a field note — the specific thing that went sideways, or the rabbit hole
-        it sent me down.
+        Three entries below get the full write-up — a production AI system, a
+        real-time platform, and a full-stack product with real payments and
+        compliance behind it. Eight more, spanning agents, robotics, and
+        embedded systems, are listed further down.
       </p>
 
       <div className="mt-4">
-        {projects.map((p, i) => (
-           <Reveal key={p.title} delay={i * 60}>
+        {projects.map((p) => (
           <ProjectCard key={p.title} project={p} />
-          </Reveal>
         ))}
       </div>
+
+      <section className="mt-24 pt-16 border-t border-line">
+        <div className="eyebrow">MORE EXPERIMENTS</div>
+        <h2 className="font-display text-2xl md:text-3xl mt-4 mb-10">
+          Eight more, shorter versions
+        </h2>
+        <CompactProjectList projects={moreProjects} />
+      </section>
 
       <NextChapter
         n="03"

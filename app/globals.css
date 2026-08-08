@@ -111,3 +111,17 @@ body {
   .reveal { opacity: 1; transform: none; transition: none; }
   .trail-pulse::after { animation: none; display: none; }
 }
+
+@keyframes activeGlow {
+  0%,100% {
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(245,158,11,.35);
+  }
+  50% {
+    opacity: .75;
+    box-shadow: 0 0 16px rgba(245,158,11,.6);
+  }
+}
+.active-bar {
+  animation: activeGlow 2.5s ease-in-out infinite;
+}
