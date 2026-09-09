@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export type Project = {
   tag: string;
@@ -11,6 +12,8 @@ export type Project = {
   problem: string;
   approach: string;
   outcome: string;
+  screenshots?: { src: string; alt: string }[]; 
+  githubUrl?: string; 
 };
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -57,13 +60,33 @@ export default function ProjectCard({ project }: { project: Project }) {
         </button>
 
         <div
-          className="overflow-hidden transition-[max-height] duration-400 ease-in-out"
-          style={{ maxHeight: open ? '320px' : '0px' }}
+          className="grid transition-[grid-template-rows] duration-400 ease-in-out"
+          style={{ gridTemplateRows: open ? '1fr' : '0fr' }}
         >
-          <div className="border-t border-line pt-4 mt-4 text-sm text-slate space-y-2.5">
-            <p><strong className="text-paperdim">Problem:</strong> {project.problem}</p>
-            <p><strong className="text-paperdim">Approach:</strong> {project.approach}</p>
-            <p><strong className="text-paperdim">Outcome:</strong> {project.outcome}</p>
+          <div className="overflow-hidden">
+            <div className="border-t border-line pt-4 mt-4 text-sm text-slate space-y-2.5">
+              <p><strong className="text-paperdim">Problem:</strong> {project.problem}</p>
+              <p><strong className="text-paperdim">Approach:</strong> {project.approach}</p>
+              <p><strong className="text-paperdim">Outcome:</strong> {project.outcome}</p>
+              {project.screenshots && project.screenshots.length > 0 && (
+                <div className="grid sm:grid-cols-2 gap-3 pt-2">
+                  {project.screenshots.map((s, index) => (
+                    <div
+                      key={index}
+                      className="relative w-full aspect-[16/10] rounded border border-line overflow-hidden"
+                    >
+                      <Image
+                        src={s.src}
+                        alt={s.alt}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, 50vw"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

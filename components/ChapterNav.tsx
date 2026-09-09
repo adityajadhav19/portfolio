@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 
 const chapters = [
   { n: '01', href: '/', label: 'Home', teaser: 'Start of the log' },
-  { n: '02', href: '/work', label: 'Work', teaser: '11 systems, shipped' },
+  { n: '02', href: '/work', label: 'Work', teaser: '10 systems, shipped' },
   { n: '03', href: '/experience', label: 'Experience', teaser: 'Team lead, week one' },
   { n: '04', href: '/about', label: 'About', teaser: 'Skills & how I got here' },
   { n: '05', href: '/contact', label: 'Contact', teaser: 'Leave a note' },
@@ -16,7 +16,6 @@ export default function ChapterNav() {
 
   return (
     <>
-      {/* Desktop: fixed left rail */}
       <nav className="hidden lg:flex fixed left-0 top-0 h-screen w-[248px] flex-col justify-between border-r border-line px-8 py-10 z-30">
         <div>
           <Link href="/" className="block mb-14">
@@ -33,7 +32,6 @@ export default function ChapterNav() {
                 const active = pathname === c.href;
                 return (
                   <li key={c.href} className="relative pl-7">
-                    {/* Timeline node */}
                     <span
                       className={`absolute left--0.5 top-1.5 w-[15px] h-[15px] rounded-full border transition-colors duration-300 ${active
                         ? 'bg-amber border-amber'
@@ -41,7 +39,6 @@ export default function ChapterNav() {
                         }`}
                     />
 
-                    {/* Active bar */}
                     {active && (
                       <span className="absolute left-5 top-0 h-11 w-[3px] rounded-full bg-amber animate-pulse" />
                     )}
@@ -79,7 +76,6 @@ export default function ChapterNav() {
         </div>
       </nav>
 
-      {/* Mobile: sticky top bar */}
       <nav className="lg:hidden sticky top-0 z-30 bg-ink/95 backdrop-blur border-b border-line">
         <div className="flex items-center justify-between px-5 py-4">
           <Link href="/" className="font-display text-base text-paper">

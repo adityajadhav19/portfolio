@@ -4,6 +4,7 @@ export type CompactProject = {
   oneLiner: string;
   stack: string[];
   href?: string;
+  githubUrl?: string;
 };
 
 export default function CompactProjectList({ projects }: { projects: CompactProject[] }) {
@@ -17,6 +18,7 @@ export default function CompactProjectList({ projects }: { projects: CompactProj
           <div className="font-mono text-[10px] text-slatedark">{p.tag}</div>
           <h4 className="font-display text-[17px] text-paper mt-1.5">{p.title}</h4>
           <p className="text-slate text-[13px] mt-2 leading-relaxed">{p.oneLiner}</p>
+          <p> <strong className="text-paperdim" >GitHub:</strong> <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" className="text-amber hover:underline">View on GitHub</a></p>
           <div className="flex flex-wrap gap-1.5 mt-3">
             {p.stack.map((s) => (
               <span
