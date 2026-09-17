@@ -60,20 +60,6 @@ export default function Home() {
           </Reveal>
           <Reveal>
             <section className="py-20 border-t border-line">
-              <div className="eyebrow">CURRENTLY</div>
-              <div className="mt-6 bg-inksoft border border-line rounded-md px-8 py-7 max-w-[640px] relative">
-                <div className="absolute left-0 top-[18px] bottom-[18px] w-[3px] bg-trace rounded" />
-                <p className="text-paperdim text-[15px] leading-relaxed">
-                  Preparing for RHCSA and going deeper on Rust — my HFT bot from the last hackathon
-                  left me wanting a much stronger handle on systems-level performance. Also slowly
-                  expanding the Ayurvedic e-commerce platform into a real second product, not just
-                  a portfolio piece.
-                </p>
-              </div>
-            </section>
-          </Reveal>
-          <Reveal>
-            <section className="py-20 border-t border-line">
               <div className="eyebrow">KEEP GOING</div>
               <h2 className="font-display text-3xl md:text-4xl mt-4 mb-12">Three more entries in this log</h2>
               <Reveal>
