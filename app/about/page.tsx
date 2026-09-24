@@ -149,7 +149,6 @@ export default function AboutPage() {
           <div>
             <div className="eyebrow">CERTIFICATIONS</div>
             <ul className="mt-4 space-y-2 text-paperdim text-sm">
-              <li>RHCSA <span className="text-slate font-mono text-xs ml-2">scheduled 2026</span></li>
               <li>Power BI &amp; Advanced Excel</li>
               <li>Tableau</li>
               <li>Automation Anywhere</li>
