@@ -67,7 +67,6 @@ const toolkit = [
     items: [
       ['eBPF & systems tracing', 'curious'],
       ['Formal verification', 'early'],
-      ['RHCSA prep', 'scheduled'],
     ],
     highlight: true,
   },
@@ -154,20 +153,6 @@ export default function AboutPage() {
               <li>Automation Anywhere</li>
               <li>UiPath</li>
             </ul>
-          </div>
-        </section>
-        </Reveal>
-        <Reveal>
-        <section className="mt-20 pt-14 border-t border-line">
-          <div className="now-label">Currently</div>
-          <div className="mt-5 bg-inksoft border border-line rounded-md px-8 py-7 max-w-[640px] relative">
-            <div className="absolute left-0 top-[18px] bottom-[18px] w-[3px] bg-trace rounded" />
-            <p className="text-paperdim text-[15px] leading-relaxed">
-              Studying for RHCSA and pushing further into Rust after the hackathon HFT
-              bot left me wanting a stronger grip on systems-level performance. Also
-              reading into eBPF, mostly out of curiosity about what&rsquo;s actually
-              happening below the application layer I usually live in.
-            </p>
           </div>
         </section>
         </Reveal>
