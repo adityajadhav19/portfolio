@@ -29,10 +29,10 @@ const achievements = [
 
 const leadership = [
   {
-    title: 'Department Events — Technical Lead',
-    period: '2nd Year – Final Year',
+    title: 'Technical lead: department events and college cultural fest',
+    period: '2nd – Final Year',
     detail:
-      'Independently owned end-to-end execution — poster design through on-ground delivery — for every department event, including Faculty Development Programs, without a team.',
+      'Owned end-to-end execution for department events and Faculty Development Programs, led scrutiny and live execution at Kalavihangam, and served as Bridge Captain of the alumni club.',
   },
   {
     title: 'Kalavihangam (College Cultural Fest) — Scrutiny Team',
@@ -98,8 +98,8 @@ function AchievementCard({
         <div className="overflow-hidden">
           <div
             className={`px-6 pb-6 gap-4 ${images.length > 1
-                ? 'grid grid-cols-1 md:grid-cols-2'
-                : 'flex justify-center'
+              ? 'grid grid-cols-1 md:grid-cols-2'
+              : 'flex justify-center'
               }`}
           >
             {images.map((image, index) => (
@@ -129,30 +129,28 @@ export default function ExperiencePage() {
     <Reveal>
       <div className="max-w-[1080px] mx-auto px-6 md:px-10 py-20 lg:py-28">
         <div className="eyebrow">EXPERIENCE</div>
-        <h1 className="font-display text-[32px] md:text-[46px] mt-5 max-w-[16ch]">
-          Team lead within the first week — for reasons I didn&rsquo;t expect
+        <h1 className="font-display text-[32px] md:text-[46px] mt-5 max-w-[20ch]">
+          Appointed team lead in my first week
         </h1>
-
         <div className="mt-14 border-l-2 border-line pl-8 relative">
           <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-amber" />
           <div className="font-mono text-xs text-slate">JAN 2026 – JUN 2026</div>
           <h2 className="font-display text-2xl md:text-3xl mt-2">
             Backend Engineer &amp; Team Lead
           </h2>
-          <div className="text-slate text-sm mt-1">EduDiagno Pvt. Ltd. — Bengaluru (Remote)</div>
+          <div className="text-slate text-sm mt-1">EduDiagno Pvt. Ltd. — Bengaluru (Remote) · Internship</div>
 
           <p className="text-paperdim text-[15px] leading-relaxed mt-6 max-w-[64ch]">
-            Joined as one of five engineers on a new AI hiring platform initiative. The
-            original team-lead appointment didn&rsquo;t work out — and within the first week,
-            I was appointed lead instead, taking ownership of technical direction and
-            delivery across three production systems at once.
+            Joined as one of five engineers on a new AI hiring platform initiative and was
+            appointed team lead within the first week, taking ownership of technical direction
+            and delivery across three production systems at once.
           </p>
 
           <div className="mt-10 space-y-9">
             <div>
               <div className="now-label">AI BI Copilot</div>
               <p className="text-paperdim text-[15px] leading-relaxed mt-2 max-w-[64ch]">
-                Architected a schema-aware AI system (Vanna-based) supporting five database
+                Architected a schema-aware AI system (Vanna-based) supporting PostgreSQL, MySQL, MSSQL and Redshift
                 engines with RAG-based schema retrieval and natural-language-to-SQL generation.
                 Built a self-healing SQL pipeline with automatic error detection and prompt
                 repair — reducing failed queries by 85% — plus role-based query enforcement
@@ -182,47 +180,47 @@ export default function ExperiencePage() {
         <Reveal>
           <section className="mt-24 pt-16 border-t border-line">
 
-          <div className="eyebrow">
-            ACHIEVEMENTS
-          </div>
+            <div className="eyebrow">
+              ACHIEVEMENTS
+            </div>
 
-          <div className="mt-8 space-y-8">
+            <div className="mt-8 space-y-8">
 
-            {achievements.map((achievement) => (
-              <AchievementCard
-                key={achievement.title}
-                title={achievement.title}
-                detail={achievement.detail}
-                images={achievement.images}
-              />
-            ))}
+              {achievements.map((achievement) => (
+                <AchievementCard
+                  key={achievement.title}
+                  title={achievement.title}
+                  detail={achievement.detail}
+                  images={achievement.images}
+                />
+              ))}
 
-          </div>
-        </section>
+            </div>
+          </section>
         </Reveal>
         <Reveal>
-        <section className="mt-20 pt-16 border-t border-line">
-          <div className="eyebrow">LEADERSHIP & EXTRACURRICULAR</div>
-          <div className="mt-8 space-y-8">
-            {leadership.map((l) => (
-              <div key={l.title} className="flex flex-col sm:flex-row sm:items-baseline gap-1.5 sm:gap-6">
-                <div className="font-mono text-xs text-slatedark shrink-0 sm:w-32">{l.period}</div>
-                <div>
-                  <h3 className="font-display text-lg text-paper">{l.title}</h3>
-                  <p className="text-slate text-sm mt-1.5 leading-relaxed max-w-[60ch]">{l.detail}</p>
+          <section className="mt-20 pt-16 border-t border-line">
+            <div className="eyebrow">LEADERSHIP & EXTRACURRICULAR</div>
+            <div className="mt-8 space-y-8">
+              {leadership.map((l) => (
+                <div key={l.title} className="flex flex-col sm:flex-row sm:items-baseline gap-1.5 sm:gap-6">
+                  <div className="font-mono text-xs text-slatedark shrink-0 sm:w-32">{l.period}</div>
+                  <div>
+                    <h3 className="font-display text-lg text-paper">{l.title}</h3>
+                    <p className="text-slate text-sm mt-1.5 leading-relaxed max-w-[60ch]">{l.detail}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      </Reveal>
-      <Reveal>
-        <NextChapter
-          n="04"
-          href="/about"
-          label="About"
-          teaser="The toolkit behind all of this, plus education and what I'm learning next."
-        />
+              ))}
+            </div>
+          </section>
+        </Reveal>
+        <Reveal>
+          <NextChapter
+            n="04"
+            href="/about"
+            label="About"
+            teaser="The toolkit behind all of this, plus education and what I'm learning next."
+          />
         </Reveal>
       </div>
     </Reveal>

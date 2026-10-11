@@ -26,9 +26,17 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Aditya Jadhav — Backend & Full-Stack Engineer',
+  metadataBase: new URL('https://adityajadhav19-portfolio.vercel.app'),
+  title: 'Aditya Jadhav: Backend Engineer, Production AI Systems',
   description:
-    'Backend & Full-Stack Engineer building AI-integrated production systems. Team Lead at EduDiagno. Schema-aware LLM pipelines, real-time systems, multi-tenant architecture.',
+    'Backend engineer building production AI systems: self-healing NL-to-SQL, RAG pipelines, real-time and offline-first platforms. Team lead at EduDiagno.',
+  openGraph: {
+    title: 'Aditya Jadhav: Backend Engineer, Production AI Systems',
+    description:
+      'Self-healing NL-to-SQL, RAG pipelines, and real-time offline-first platforms. Team lead at EduDiagno.',
+    url: '/',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({

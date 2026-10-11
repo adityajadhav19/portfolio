@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 
 const chapters = [
   { n: '01', href: '/', label: 'Home', teaser: 'Start of the log' },
-  { n: '02', href: '/work', label: 'Work', teaser: '10 systems, shipped' },
+  { n: '02', href: '/work', label: 'Work', teaser: '5 systems, shipped' },
   { n: '03', href: '/experience', label: 'Experience', teaser: 'Team lead, week one' },
   { n: '04', href: '/about', label: 'About', teaser: 'Skills & how I got here' },
   { n: '05', href: '/contact', label: 'Contact', teaser: 'Leave a note' },
@@ -73,6 +73,10 @@ export default function ChapterNav() {
           <a href="mailto:adityajadhav11193@gmail.com" className="hover:text-amber transition-colors">
             adityajadhav11193@gmail.com
           </a>
+          <div className="mt-2 flex gap-4">
+            <a href="https://www.linkedin.com/in/adityajadhav119" target="_blank" rel="noreferrer" className="hover:text-amber transition-colors">LinkedIn</a>
+            <a href="https://github.com/adityajadhav19" target="_blank" rel="noreferrer" className="hover:text-amber transition-colors">GitHub</a>
+          </div>
         </div>
       </nav>
 

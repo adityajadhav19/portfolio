@@ -13,13 +13,13 @@ const previews = [
     n: '03',
     href: '/experience',
     label: 'Experience',
-    desc: 'Appointed team lead in my first week — after the original lead didn\u2019t work out. Then had to actually earn it.',
+    desc: 'Appointed team lead in my first week, then owned three production systems at once.',
   },
   {
     n: '04',
     href: '/about',
     label: 'About',
-    desc: 'Skills, education, certifications — and what I\u2019m reading into right now.',
+    desc: 'Skills, education, and what I\u2019m learning next.',
   },
 ];
 
@@ -30,15 +30,22 @@ export default function Home() {
         <div className="max-w-[1080px] mx-auto px-6 md:px-10">
           <Reveal>
             <section className="pt-14 pb-16 md:min-h-[80vh] md:flex md:flex-col md:justify-center md:py-20">
-              <div className="eyebrow">BACKEND & FULL-STACK ENGINEER — AI-INTEGRATED SYSTEMS</div>
-              <h1 className="font-display font-medium text-[32px] md:text-[52px] leading-[1.15] tracking-[-0.01em] max-w-[15ch] mt-6">
-                I build systems that explain their own SQL —{' '}
-                <em className="italic text-amber">then go find out why</em> the query failed.
+              <div className="eyebrow">BACKEND ENGINEER — PRODUCTION AI SYSTEMS</div>
+
+              <h1 className="font-display text-[34px] md:text-[54px] leading-[1.1] mt-6 max-w-[24ch]">
+                I build backend systems for production AI: pipelines that{' '}
+                <em className="not-italic text-amber">repair their own SQL</em>, and real-time
+                platforms that run offline.
               </h1>
-              <p className="text-slate text-[17px] max-w-[52ch] mt-7 leading-relaxed">
-                Six months in, I was leading a 5-person engineering team and had architected
-                a schema-aware LLM pipeline across five database engines, a real-time proctoring
-                platform, and a solo-built AI interview copilot. This is the log of how.
+
+              <p className="text-slate max-w-[58ch] mt-6 text-[15.5px] leading-relaxed">
+                At EduDiagno I led a 5-person team across three production systems: an NL-to-SQL
+                copilot over PostgreSQL, MySQL, MSSQL and Redshift, a real-time proctoring
+                platform, and an AI interview copilot.
+              </p>
+
+              <p className="font-mono text-sm text-amber mt-6">
+                Open to backend and AI engineering roles: Bengaluru, Hyderabad, Pune, or remote.
               </p>
               <div className="mt-14 flex flex-wrap items-center gap-6">
                 <Link
@@ -63,27 +70,27 @@ export default function Home() {
               <div className="eyebrow">KEEP GOING</div>
               <h2 className="font-display text-3xl md:text-4xl mt-4 mb-12">Three more entries in this log</h2>
               <Reveal>
-              <div className="grid md:grid-cols-3 gap-6">
-                {previews.map((p) => (
-                  <Link
-                    key={p.href}
-                    href={p.href}
-                    className="group border border-line rounded-md p-6 hover:border-amber/50 transition-colors flex flex-col justify-between min-h-[210px]"
-                  >
-                    <div>
-                      <div className="font-mono text-[11px] text-slatedark">{p.n}</div>
-                      <h3 className="font-display text-xl text-paper mt-2 group-hover:text-amber transition-colors">
-                        {p.label}
-                      </h3>
-                      <p className="text-slate text-sm mt-3 leading-relaxed">{p.desc}</p>
-                    </div>
-                    <span className="font-mono text-xs text-trace mt-6 inline-flex items-center gap-1.5">
-                      Read this entry
-                      <span className="group-hover:translate-x-1 transition-transform">→</span>
-                    </span>
-                  </Link>
-                ))}
-              </div>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {previews.map((p) => (
+                    <Link
+                      key={p.href}
+                      href={p.href}
+                      className="group border border-line rounded-md p-6 hover:border-amber/50 transition-colors flex flex-col justify-between min-h-[210px]"
+                    >
+                      <div>
+                        <div className="font-mono text-[11px] text-slatedark">{p.n}</div>
+                        <h3 className="font-display text-xl text-paper mt-2 group-hover:text-amber transition-colors">
+                          {p.label}
+                        </h3>
+                        <p className="text-slate text-sm mt-3 leading-relaxed">{p.desc}</p>
+                      </div>
+                      <span className="font-mono text-xs text-trace mt-6 inline-flex items-center gap-1.5">
+                        Read this entry
+                        <span className="group-hover:translate-x-1 transition-transform">→</span>
+                      </span>
+                    </Link>
+                  ))}
+                </div>
               </Reveal>
             </section>
           </Reveal>
@@ -92,7 +99,7 @@ export default function Home() {
               n="02"
               href="/work"
               label="Work"
-              teaser="10 systems, each one an excuse to learn something the hard way."
+              teaser="5 systems, each one an excuse to learn something the hard way."
             />
           </Reveal>
         </div>
