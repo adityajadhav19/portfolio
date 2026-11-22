@@ -20,7 +20,13 @@ const previews = [
     href: '/about',
     label: 'About',
     desc: 'Skills, education, and what I\u2019m learning next.',
-  },
+  },,
+  {
+    n: '05',
+    href: '/technical-highlights',
+    label: 'Technical Highlights',
+    desc: 'Engineering problems, implementation decisions, and lessons from real projects.',
+  }
 ];
 
 export default function Home() {
