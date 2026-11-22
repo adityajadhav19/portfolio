@@ -20,7 +20,7 @@ const previews = [
     href: '/about',
     label: 'About',
     desc: 'Skills, education, and what I\u2019m learning next.',
-  },,
+  },
   {
     n: '05',
     href: '/technical-highlights',
