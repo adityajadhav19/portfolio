@@ -1,41 +1,94 @@
-# Aditya Jadhav — Portfolio (Next.js)
+# Aditya Jadhav — Portfolio
 
-A multi-page portfolio built as a "field journal" — five real pages (Home, Work,
-Experience, About, Contact) connected by a persistent trail-style navigation, so the
-design itself invites visitors to keep going instead of stopping at the hero.
+Personal engineering portfolio built with **Next.js 14 App Router**, React, TypeScript, and Tailwind CSS. The site uses a field-journal visual style to present project case studies, experience, technical highlights, and contact information.
 
-## Run it locally
+**Live site:** https://adityajadhav19-portfolio.vercel.app
+
+## Pages
+
+- `/` — Introduction and navigation
+- `/work` — Project case studies and demos
+- `/experience` — Engineering experience, leadership, and achievements
+- `/about` — Skills, education, and background
+- `/technical-highlights` — Engineering challenges, implementation decisions, and outcomes
+- `/contact` — Contact form and professional links
+
+## Featured work
+
+- **EduDiagno AI BI Copilot** — Schema-aware natural-language-to-SQL across multiple database engines, with retrieval and SQL repair.
+- **Voice RAG System** — Custom staged retrieval pipeline with hybrid search, fusion, reranking, and caching.
+- **Examination Platform** — Multi-tenant exam system with RBAC, real-time proctoring, and offline/LAN deployment.
+- **Active Products** — Production Ayurvedic e-commerce platform with payment integration and order workflows.
+- **TripSplit** — Group expense-sharing web app with an Android APK.
+
+TripSplit links:
+- [Source code](https://github.com/adityajadhav19/TripSplit)
+- [Live demo](https://tripsplit-split-expence.vercel.app/)
+- [Download Android APK](https://github.com/adityajadhav19/TripSplit/releases/download/v1.0.0.0/TripSplit.apk)
+
+## Tech stack
+
+- Next.js App Router and React
+- TypeScript
+- Tailwind CSS
+- Next.js Metadata API for page metadata
+- Next.js sitemap and robots metadata routes
+
+## Run locally
+
+Requirements: Node.js compatible with the installed Next.js version and npm.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then open http://localhost:3000
+Open http://localhost:3000.
 
-## Deploy
+## Production build
 
-This is a standard Next.js 14 App Router project — it deploys as-is to
-[Vercel](https://vercel.com) (recommended, same company as Next.js, free tier is
-plenty for this), Netlify, or any Node host.
+```bash
+npm run build
+npm run start
+```
 
-Fastest path: push this folder to a GitHub repo, then import it at vercel.com/new.
+## Deployment
 
-## What's in here
+The project can be deployed to Vercel or another platform that supports Next.js. Connect the repository to Vercel and configure the production domain in the deployment settings.
 
-- `app/page.tsx` — Home: hero + "currently" note + previews of the other 3 pages
-- `app/work/page.tsx` — all 6 projects as expandable case-study cards
-- `app/experience/page.tsx` — EduDiagno timeline, achievements, leadership
-- `app/about/page.tsx` — skills toolkit, education, certifications
-- `app/contact/page.tsx` — contact links
-- `components/ChapterNav.tsx` — the persistent left-rail navigation (the "trail")
-- `components/ProjectCard.tsx` — expandable project card used on /work
-- `components/NextChapter.tsx` — the "keep reading" link at the bottom of each page
+The SEO metadata currently uses the portfolio's Vercel URL as the canonical site origin. If the production domain changes, update the site origin in:
 
-## To personalize further
+- `app/layout.tsx`
+- `app/sitemap.ts`
+- `app/robots.ts`
 
-- Swap the placeholder GitHub/LinkedIn URLs in `app/contact/page.tsx` and
-  `components/ChapterNav.tsx` if they change
-- Add real project screenshots/images inside each `ProjectCard` if you want visuals
-  (currently text-only by design, to keep load fast and focus on substance)
-- Colors and fonts are centralized in `tailwind.config.js` and `app/layout.tsx`
+## SEO
+
+The application includes:
+- Global title and description defaults
+- Page-specific titles, descriptions, and canonical URLs
+- Open Graph and Twitter card metadata
+- Person structured data
+- `/sitemap.xml`
+- `/robots.txt`
+
+After deployment, verify the sitemap in Google Search Console and request indexing for the important pages.
+
+## Repository structure
+
+```text
+app/
+  about/
+  contact/
+  experience/
+  technical-highlights/
+  work/
+  layout.tsx
+  page.tsx
+  robots.ts
+  sitemap.ts
+components/
+  ChapterNav.tsx
+  ProjectCard.tsx
+  NextChapter.tsx
+```
