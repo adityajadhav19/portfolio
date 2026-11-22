@@ -70,7 +70,7 @@ export default function Home() {
               <div className="eyebrow">KEEP GOING</div>
               <h2 className="font-display text-3xl md:text-4xl mt-4 mb-12">Four more entries in this log</h2>
               <Reveal>
-                <div className="grid md:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
                   {previews.map((p) => (
                     <Link
                       key={p.href}
