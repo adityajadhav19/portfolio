@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 
 const chapters = [
   { n: '01', href: '/', label: 'Home', teaser: 'Start of the log' },
-  { n: '02', href: '/work', label: 'Work', teaser: '5 systems, shipped' },
+  { n: '02', href: '/work', label: 'Work', teaser: '7 projects, shipped' },
   { n: '03', href: '/experience', label: 'Experience', teaser: 'Team lead, week one' },
   { n: '04', href: '/about', label: 'About', teaser: 'Skills & how I got here' },
   { n: '05', href: '/contact', label: 'Contact', teaser: 'Leave a note' },
