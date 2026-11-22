@@ -87,18 +87,33 @@ const projects: Project[] = [
       }
     ],
   },
+  {
+    tag: '05 — Personal / Android + Full-Stack',
+    title: 'TripSplit — Shared Expense Manager',
+    stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'Prisma', 'JWT'],
+    summary:
+      'A group expense-sharing app for trips and shared plans. Create or join a group, record expenses, track each person’s share, and see how balances settle.',
+    note: 'TripSplit is available as both a responsive web app and an Android APK, so the same project can be tried in a browser or installed on a phone.',
+    problem: 'Groups need a straightforward way to record shared spending and understand who owes whom without manually calculating every expense.',
+    approach: 'Built group management, password-protected access, expense and participant tracking, per-member cost splitting, and a settlement summary using Next.js API routes, Prisma, and PostgreSQL.',
+    outcome: 'Live web demo and Android v1.0.0 release available.',
+    githubUrl: 'https://github.com/adityajadhav19/TripSplit',
+    liveUrl: 'https://tripsplit-split-expence.vercel.app/',
+    apkUrl: 'https://github.com/adityajadhav19/TripSplit/releases/download/v1.0.0.0/TripSplit.apk',
+    screenshots: [],
+  },
 ];
 
 const moreProjects: CompactProject[] = [
   {
-    tag: '05 — Solo / AI Voice',
+    tag: '06 — Solo / AI Voice',
     title: 'Parakeet — AI Interview Copilot',
     stack: ['OpenAI GPT-4o', 'Deepgram'],
     oneLiner: 'Real-time voice transcription with live answer suggestions during an actual conversation, not batch Q&A.',
     githubUrl: 'https://github.com/adityajadhav19/readme/blob/master/parakeet-README.md',
   },
   {
-    tag: '06 — Infrastructure',
+    tag: '07 — Infrastructure',
     title: 'BI Copilot CI/CD Pipeline',
     stack: ['GitHub Actions', 'EC2', 'Docker Compose'],
     oneLiner: 'Bastion-proxied deployment pipeline with pre-migration backups and selective service restarts.',
@@ -111,11 +126,10 @@ export default function WorkPage() {
     <Reveal>
       <div className="max-w-[1080px] mx-auto px-6 md:px-10 py-20 lg:py-28">
         <div className="eyebrow">SPECIMENS</div>
-        <h1 className="font-display text-[32px] md:text-[46px] mt-5">5 systems, shipped</h1>
+        <h1 className="font-display text-[32px] md:text-[46px] mt-5">7 projects, shipped</h1>
         <p className="text-slate max-w-[56ch] mt-5 text-[15px] leading-relaxed">
-          Four entries below get the full write-up: a production AI system, a retrieval
-          pipeline, a real-time platform, and a full-stack product with real payments and
-          compliance behind it. Two shorter entries follow.
+          Five projects below get the full write-up: production AI, retrieval, real-time systems,
+          e-commerce, and TripSplit. Two shorter entries follow.
         </p>
         <Reveal>
           <div className="mt-4">
