@@ -13,7 +13,9 @@ export type Project = {
   approach: string;
   outcome: string;
   screenshots?: { src: string; alt: string }[]; 
-  githubUrl?: string; 
+  githubUrl?: string;
+  liveUrl?: string;
+  apkUrl?: string;
 };
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -24,6 +26,13 @@ export default function ProjectCard({ project }: { project: Project }) {
       <div>
         <div className="font-mono text-[11px] text-slate">{project.tag}</div>
         <h3 className="font-display text-2xl text-paper mt-2.5">{project.title}</h3>
+        {(project.githubUrl || project.liveUrl || project.apkUrl) && (
+          <div className="flex flex-wrap gap-3 mt-4 font-mono text-[11px]">
+            {project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-amber hover:underline">GitHub ↗</a>}
+            {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-trace hover:text-amber">Live demo ↗</a>}
+            {project.apkUrl && <a href={project.apkUrl} className="text-amber border border-amber/40 rounded-full px-3 py-1 hover:bg-amber/10">Download APK ↓</a>}
+          </div>
+        )}
         <div className="flex flex-wrap gap-2 mt-4">
           {project.stack.map((s) => (
             <span
