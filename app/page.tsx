@@ -68,7 +68,7 @@ export default function Home() {
           <Reveal>
             <section className="py-20 border-t border-line">
               <div className="eyebrow">KEEP GOING</div>
-              <h2 className="font-display text-3xl md:text-4xl mt-4 mb-12">Three more entries in this log</h2>
+              <h2 className="font-display text-3xl md:text-4xl mt-4 mb-12">Four more entries in this log</h2>
               <Reveal>
                 <div className="grid md:grid-cols-3 gap-6">
                   {previews.map((p) => (
@@ -99,7 +99,7 @@ export default function Home() {
               n="02"
               href="/work"
               label="Work"
-              teaser="5 systems, each one an excuse to learn something the hard way."
+              teaser="7 projects, each one an excuse to learn something the hard way."
             />
           </Reveal>
         </div>
