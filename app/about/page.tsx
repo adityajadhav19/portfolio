@@ -97,9 +97,9 @@ export default function AboutPage() {
         </p>
         <NextChapter
           n="05"
-          href="/contact"
-          label="Contact"
-          teaser="If something here made you curious, this is where you tell me."
+          href="/technical-highlights"
+          label="Technical Highlights"
+          teaser="Engineering decisions and problems solved across the projects."
         />
       </Reveal>
     </div>
