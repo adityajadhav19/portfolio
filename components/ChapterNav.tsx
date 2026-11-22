@@ -8,7 +8,8 @@ const chapters = [
   { n: '02', href: '/work', label: 'Work', teaser: '7 projects, shipped' },
   { n: '03', href: '/experience', label: 'Experience', teaser: 'Team lead, week one' },
   { n: '04', href: '/about', label: 'About', teaser: 'Skills & how I got here' },
-  { n: '05', href: '/contact', label: 'Contact', teaser: 'Leave a note' },
+  { n: '05', href: '/technical-highlights', label: 'Technical Highlights', teaser: 'Engineering decisions' },
+  { n: '06', href: '/contact', label: 'Contact', teaser: 'Leave a note' },
 ];
 
 export default function ChapterNav() {
@@ -27,7 +28,7 @@ export default function ChapterNav() {
 
           <div className="relative pl-1">
             <div className="absolute left-[7px] top-2 bottom-2 w-px bg-line" aria-hidden />
-            <ul className="space-y-8">
+            <ul className="space-y-6">
               {chapters.map((c) => {
                 const active = pathname === c.href;
                 return (
@@ -46,13 +47,13 @@ export default function ChapterNav() {
                       <div className="flex items-baseline gap-2">
                         <span className="font-mono text-[11px] text-slatedark">{c.n}</span>
                         <span
-                          className={`font-display text-[17px] transition-colors ${active ? 'text-amber' : 'text-paper group-hover:text-amber'
+                          className={`font-display text-[15px] transition-colors ${active ? 'text-amber' : 'text-paper group-hover:text-amber'
                             }`}
                         >
                           {c.label}
                         </span>
                       </div>
-                      <div className="font-mono text-[11px] text-slate mt-0.5">{c.teaser}</div>
+                      <div className="font-mono text-[10px] text-slate mt-0.5">{c.teaser}</div>
                     </Link>
                   </li>
                 );
